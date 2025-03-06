@@ -18,6 +18,12 @@ describe('Amazon Website E2E testing', function () {
             await main.findFirstPrimeProduct();
     });
 
+    it('Verify that an item exists in the cart', async () => {
+            await main.cart();
+            const cartItems = await $$('//span[contains(@class, "sc-product-title")]');
+            expect(cartItems.length).toBeGreaterThan(0);
+        }); 
+
     it('Delete item from cart and ver', async () => {
             await main.deleteCartItem();
             const cartItems = await $$('//span[contains(@class, "sc-product-title")]');
