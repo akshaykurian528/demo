@@ -10,5 +10,9 @@ describe('Amazon Website E2E testing', function () {
     it('Selecting the search dropdown box and clicking the electronics option from dropdown', async function(){
         await main.searchDropdown();
     }) 
+    it('Searching Product', async function(){
+            await main.searchBar();
+            await main.search();
+        })
     
 })
