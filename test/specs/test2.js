@@ -17,4 +17,11 @@ describe('Amazon Website E2E testing', function () {
     it('Find first product with Amazon Prime label and adding to cart', async function () {
             await main.findFirstPrimeProduct();
     });
+
+    it('Delete item from cart and ver', async () => {
+            await main.deleteCartItem();
+            const cartItems = await $$('//span[contains(@class, "sc-product-title")]');
+            expect(cartItems.length).toBe(0);
+        }); 
+
 })
